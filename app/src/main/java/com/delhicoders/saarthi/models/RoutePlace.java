@@ -31,7 +31,22 @@ public class RoutePlace {
     @Expose
     public Duration duration;
 
+    public RoutePlace(){
+
+    }
+
+    public RoutePlace(String name, String text){
+        this.name = name;
+        duration = new Duration(text);
+    }
+
     public class Duration {
+        Duration(){
+
+        }
+        Duration(String text){
+            this.text = text;
+        }
 
         @SerializedName("text")
         @Expose

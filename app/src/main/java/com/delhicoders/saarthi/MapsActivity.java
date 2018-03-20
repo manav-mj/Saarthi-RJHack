@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.delhicoders.saarthi.dummy.DummyContent;
 import com.delhicoders.saarthi.models.RoutePlace;
 import com.delhicoders.saarthi.network.ApiClient;
 import com.delhicoders.saarthi.response.RouteResponse;
@@ -25,7 +26,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final String TAG = MapsActivity.class.getSimpleName();
     private GoogleMap mMap;
     private ArrayList<RoutePlace> places = new ArrayList<>();
-//    private String[] placeNames = {"Hawa Mahal" , "Amer fort", "Nahargarh fort", "City palace"};
 
     private LatLng userLatLng;
     private PlaceSelectionFragment routePlaceFragment;
@@ -35,13 +35,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         userLatLng = getIntent().getParcelableExtra(MainActivity.LOCATION_TRANSFER_KEY);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        getPlacesFromNetwork();
+//        getPlacesFromNetwork();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         routePlaceFragment = (PlaceSelectionFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.place_list_fragment);
         mapFragment.getMapAsync(this);
+        // setting dummy data
+        places = DummyContent.getDummyPlaces();
+        routePlaceFragment.setPlaces(places);
     }
 
     private void getPlacesFromNetwork() {
@@ -76,14 +78,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(places.get(0).getLatLng(), 15.0f));
         }
-    }
-
-    ArrayList<LatLng> getPlaces() {
-        ArrayList<LatLng> tempPlaces = new ArrayList<>();
-        tempPlaces.add(new LatLng(26.9239, 75.8267));
-        tempPlaces.add(new LatLng(26.9855, 75.8513));
-        tempPlaces.add(new LatLng(26.9372, 75.8152));
-        tempPlaces.add(new LatLng(26.9258, 75.8237));
-        return tempPlaces;
     }
 }

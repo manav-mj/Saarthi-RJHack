@@ -44,6 +44,7 @@ public class PlaceSelectionFragment extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
         places = new ArrayList<>();
+        adapter = new PlaceItemAdapter(places, mListener);
     }
 
     @Override
@@ -52,13 +53,11 @@ public class PlaceSelectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_place_select, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
+        RecyclerView recyclerView = view.findViewById(R.id.list);
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-            adapter = new PlaceItemAdapter(places, mListener);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
             recyclerView.setAdapter(adapter);
-        }
+
         return view;
     }
 
@@ -97,6 +96,6 @@ public class PlaceSelectionFragment extends Fragment {
 
     public void setPlaces(ArrayList<RoutePlace> places){
         this.places.addAll(places);
-        adapter.notifyItemRangeInserted(0, places.size() - 1);
+        adapter.notifyDataSetChanged();
     }
 }
