@@ -8,7 +8,7 @@ So, our proposal to the above problem, is an app that takes into account the use
 
 ### App workflow:
 
-https://user-images.githubusercontent.com/17237680/37664983-483367ca-2c82-11e8-82b7-5c9cf53dbe92.png
+<img src="https://user-images.githubusercontent.com/17237680/37664983-483367ca-2c82-11e8-82b7-5c9cf53dbe92.png">
 
 ### Factors considered:
 
