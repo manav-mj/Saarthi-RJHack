@@ -1,10 +1,13 @@
 # SAARTHI Android APP
 
+
 Tourists visit Rajasthan from not only India but also abroad, so it is necessary to have an assistance for them which can guide them what places to visit according to the time they have so that they can utilize there time and stay at Rajasthan to its best. 
 Tourists face a lot of problems while identifying the places to visit in their limited time since Rajasthan is famous for its numerous historical forts, palaces, art and culture. 
 Due to such diversity, people get confused on what to visit first and this often leads to mismanagement of time and tourists miss out on places that might have interested them.
 Due to this the we fail to tap the profits that could have been earned.
 So, our proposal to the above problem, is an app that takes into account the users interests and preferences and curates the perfect and efficient travel experience for them.
+
+**Back-End Github url - https://github.com/siddhantbajaj/saarthi**
 
 ### App workflow:
 
@@ -33,6 +36,5 @@ So, our proposal to the above problem, is an app that takes into account the use
 
 ### Android App:
 
-<img src="https://user-images.githubusercontent.com/17237680/37664584-99f093fe-2c81-11e8-8d81-a2a133c5df01.png" height="480px" width="270px">
+<img src="https://user-images.githubusercontent.com/22222147/37667311-af1afb06-2c87-11e8-8b04-bf1d3d541393.gif" height="480px" width="270px">
 
-**Back-End Github url - https://github.com/siddhantbajaj/saarthi**
